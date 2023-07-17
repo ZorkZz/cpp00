@@ -6,7 +6,7 @@
 #    By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/17 19:07:09 by astachni          #+#    #+#              #
-#    Updated: 2023/07/17 19:14:16 by astachni         ###   ########.fr        #
+#    Updated: 2023/07/17 20:10:52 by astachni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CC = g++
 
 all: $(NAME)
 
-%.zizi: %.cpp $(HEADER) Makefile
+%.zizi: %.cpp Makefile
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf	"\033[1;33m \r\033[2KCreating -c $< -o $\n \033[0m"
 
