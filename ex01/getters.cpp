@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 20:11:34 by astachni          #+#    #+#             */
-/*   Updated: 2023/07/17 23:26:53 by astachni         ###   ########.fr       */
+/*   Updated: 2023/07/19 00:09:41 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ std::string	Contact::get_nickname() const
 std::string	Contact::get_phone_number() const
 {
 	return phone_number;
+}
+
+std::string	Contact::get_darkest_secret() const
+{
+	return darkest_secret;
 }
 
 Contact *PhoneBook::get_contact()

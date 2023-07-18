@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:18:01 by astachni          #+#    #+#             */
-/*   Updated: 2023/07/18 00:08:25 by astachni         ###   ########.fr       */
+/*   Updated: 2023/07/19 00:37:29 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ int	main(void)
 				{
 					temp_contact[i].aff_contact(i);
 				}
-				for (size_t i = 0; i < 56; i++)
+				for (size_t i = 0; i < 67; i++)
 				{
 					std::cout << "-";
 				}
 				std::cout << std::endl;
+				temp_contact->print_contact();
 			}
 		}
 		else
