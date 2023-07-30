@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 22:44:48 by astachni          #+#    #+#             */
-/*   Updated: 2023/07/19 00:45:52 by astachni         ###   ########.fr       */
+/*   Updated: 2023/07/30 23:19:58 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ void	PhoneBook::choose_contact(void)
 void	Contact::set_contact()
 {
 	std::cout << "Set first name: ";
-	std::cin >> this->first_name;
+	std::getline(std::cin, this->first_name);
 	std::cout << "Set last name: ";
-	std::cin >> this->last_name;
+	std::getline(std::cin, this->last_name);
 	std::cout << "Set nickname: ";
-	std::cin >> this->nickname;
+	std::getline(std::cin, this->nickname);
 	std::cout << "Set phone number: ";
-	std::cin >> this->phone_number;
+	std::getline(std::cin, this->phone_number);
 	std::cout << "Set darkest secret: ";
-	std::cin >> this->darkest_secret;
+	std::getline(std::cin, this->darkest_secret);
 }
 
 void	print_ten_char(std::string str)

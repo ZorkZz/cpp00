@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:18:01 by astachni          #+#    #+#             */
-/*   Updated: 2023/07/19 00:37:29 by astachni         ###   ########.fr       */
+/*   Updated: 2023/07/30 23:22:20 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(void)
 	while (true)
 	{
 		std::cout << "ADD, SEARCH or EXIT: ";
-		if (std::cin >> key_word)
+		if (std::getline(std::cin, key_word))
 		{
 			if (key_word == "EXIT")
 				break ;
