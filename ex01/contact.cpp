@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 22:44:48 by astachni          #+#    #+#             */
-/*   Updated: 2023/07/30 23:19:58 by astachni         ###   ########.fr       */
+/*   Updated: 2023/09/05 12:36:14 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,5 +121,7 @@ void	Contact::print_contact(void)
 			std::cout << this[index].get_darkest_secret() << std::endl;
 			is_passed = 1;
 		}
+		if (std::cin.eof() == true)
+			exit(1);
 	}
 }
