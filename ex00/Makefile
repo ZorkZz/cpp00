@@ -18,9 +18,9 @@ OBJ = $(SRC:%.cpp=%.zizi)
 
 RM = rm -rf
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-CC = g++
+CC = c++
 
 all: $(NAME)
 
