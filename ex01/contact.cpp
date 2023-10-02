@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 22:44:48 by astachni          #+#    #+#             */
-/*   Updated: 2023/09/05 12:36:14 by astachni         ###   ########.fr       */
+/*   Updated: 2023/10/02 16:19:19 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,24 +96,29 @@ bool	is_str_digit(std::string str)
 	
 }
 
-void	Contact::print_contact(void)
+int	Contact::print_contact(void)
 {
 	bool		is_passed;
 	std::string	key_word;
 	int			index;
 
-	is_passed = 0;
+	is_passed = 0;	
 	while (is_passed == 0)
 	{
 		std::cout << "enter the index of contact: ";
 		if (std::cin >> key_word)
 		{
-			if (!is_str_digit(key_word) || (std::stoi(key_word) < 0 && std::stoi(key_word) > 8))
+			if (!is_str_digit(key_word) || (atoi(key_word.c_str()) < 0 || atoi(key_word.c_str()) > 8))
 			{
 				std::cout << "Error bad index" << std::endl;
-				return ;
+				return 0;
 			}
-			index = std::stoi(key_word);
+			index = atoi(key_word.c_str());
+			if (this[index].get_first_name().c_str()[0] == 0)
+			{
+				std::cout << "no contacts here" << std::endl;
+				return 0;
+			}
 			std::cout << this[index].get_first_name() << std::endl;
 			std::cout << this[index].get_last_name() << std::endl;
 			std::cout << this[index].get_nickname() << std::endl;
@@ -122,6 +127,7 @@ void	Contact::print_contact(void)
 			is_passed = 1;
 		}
 		if (std::cin.eof() == true)
-			exit(1);
+			return 1;
 	}
+	return 0;
 }

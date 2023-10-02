@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:19:00 by astachni          #+#    #+#             */
-/*   Updated: 2023/07/19 00:38:01 by astachni         ###   ########.fr       */
+/*   Updated: 2023/10/02 15:57:21 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <iostream>
 # include <cstring>
 # include <string>
+# include <stdlib.h>
 
 class Contact
 {
@@ -24,7 +25,7 @@ class Contact
 		Contact();
 		void		aff_contact(int index);
 		void		set_contact(void);
-		void		print_contact();
+		int			print_contact();
 		std::string	get_first_name() const;
 		std::string	get_last_name() const;
 		std::string	get_nickname() const;

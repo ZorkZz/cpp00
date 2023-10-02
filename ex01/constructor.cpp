@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:51:33 by astachni          #+#    #+#             */
-/*   Updated: 2023/07/19 00:17:45 by astachni         ###   ########.fr       */
+/*   Updated: 2023/10/02 14:13:20 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Contact::Contact()
 }
 
 PhoneBook::PhoneBook()
-	:my_contact{}
 {
 	std::cout << "Welcome to the best contact manager" << std::endl;
 }
