@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   constructor.cpp                                    :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/17 19:51:33 by astachni          #+#    #+#             */
-/*   Updated: 2023/10/02 14:13:20 by astachni         ###   ########.fr       */
+/*   Created: 2023/07/17 19:19:00 by astachni          #+#    #+#             */
+/*   Updated: 2023/10/15 21:55:02 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "class.hpp"
+#ifndef PHONEBOOK_HPP
 
-Contact::Contact()
-{
-	first_name[0] = '\0';
-    last_name[0] = '\0';
-    nickname[0] = '\0';
-    phone_number[0] = '\0';
-}
+# define PHONEBOOK_HPP
 
-PhoneBook::PhoneBook()
+# include "prototype.hpp"
+
+class PhoneBook
 {
-	std::cout << "Welcome to the best contact manager" << std::endl;
-}
+	public:
+		PhoneBook();
+		void	choose_contact(void);
+		Contact	*get_contact(void);
+
+	private:
+		Contact my_contact[8];
+};
+
+#endif

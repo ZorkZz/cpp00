@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 22:44:48 by astachni          #+#    #+#             */
-/*   Updated: 2023/10/02 16:19:19 by astachni         ###   ########.fr       */
+/*   Updated: 2023/10/15 21:47:32 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "class.hpp"
+#include "prototype.hpp"
 
-void	PhoneBook::choose_contact(void)
+Contact::Contact()
 {
-	static int	i = 0;
-	this->my_contact[i].set_contact();
-	i++;
-	if (i == 8)
-		i = 0;
+	first_name[0] = '\0';
+    last_name[0] = '\0';
+    nickname[0] = '\0';
+    phone_number[0] = '\0';
 }
 
 void	Contact::set_contact()
@@ -35,29 +34,6 @@ void	Contact::set_contact()
 	std::getline(std::cin, this->darkest_secret);
 }
 
-void	print_ten_char(std::string str)
-{
-	std::size_t	size = str.size();
-
-	if (size <= 10)
-	{
-		std::cout << str;
-		for (std::size_t i = 0; 10 - i != size; i++)
-		{
-			std::cout << " ";
-		}
-	}
-	else
-	{
-		for (std::size_t i = 0; i < 9; i++)
-		{
-			std::cout << str[i];
-		}
-		std::cout << ".";
-	}
-	std::cout << "|";
-}
-
 void	Contact::aff_contact(int index)
 {
 	std::string first_name = get_first_name();
@@ -65,35 +41,22 @@ void	Contact::aff_contact(int index)
 	std::string nickname = get_nickname();
 	std::string phone_number = get_phone_number();
 	std::string	darkest_secret = get_darkest_secret();
-	for (size_t i = 0; i < 67; i++)
+	for (size_t i = 0; i < 45; i++)
 	{
 		std::cout << "-";
 	}
 	std::cout << std::endl;
 	std::cout << "|";
-	std::cout << index;
-	for (std::size_t i = 0; i < 9; i++)
+	for (size_t j = 0; j < 9; j++)
 	{
 		std::cout << " ";
 	}
+	std::cout << index;
 	std::cout << "|";
 	print_ten_char(first_name);
 	print_ten_char(last_name);
 	print_ten_char(nickname);
-	print_ten_char(phone_number);
-	print_ten_char(darkest_secret);
 	std::cout << std::endl;
-}
-
-bool	is_str_digit(std::string str)
-{
-	for (std::size_t i = 0; i < str.size(); i++)
-	{
-		if (!std::isdigit(str[i]))
-			return (false);
-	}
-	return(true);
-	
 }
 
 int	Contact::print_contact(void)
@@ -130,4 +93,29 @@ int	Contact::print_contact(void)
 			return 1;
 	}
 	return 0;
+}
+
+std::string	Contact::get_first_name() const
+{
+	return first_name;
+}
+
+std::string	Contact::get_last_name() const
+{
+	return last_name;
+}
+
+std::string	Contact::get_nickname() const
+{
+	return nickname;
+}
+
+std::string	Contact::get_phone_number() const
+{
+	return phone_number;
+}
+
+std::string	Contact::get_darkest_secret() const
+{
+	return darkest_secret;
 }

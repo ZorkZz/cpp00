@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   class.hpp                                          :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:19:00 by astachni          #+#    #+#             */
-/*   Updated: 2023/10/02 15:57:21 by astachni         ###   ########.fr       */
+/*   Updated: 2023/10/15 21:37:23 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_HPP
+#ifndef CONTACT_HPP
 
-# define CLASS_HPP
+# define CONTACT_HPP
 
 # include <iostream>
 # include <cstring>
@@ -38,17 +38,6 @@ class Contact
 		std::string nickname;
 		std::string phone_number;
 		std::string darkest_secret;
-};
-
-class PhoneBook
-{
-	public:
-		PhoneBook();
-		void	choose_contact(void);
-		Contact	*get_contact(void);
-
-	private:
-		Contact my_contact[8];
 };
 
 #endif

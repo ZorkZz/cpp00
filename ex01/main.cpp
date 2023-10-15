@@ -6,11 +6,11 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:18:01 by astachni          #+#    #+#             */
-/*   Updated: 2023/10/02 15:44:26 by astachni         ###   ########.fr       */
+/*   Updated: 2023/10/15 21:54:22 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "class.hpp"
+#include "prototype.hpp"
 
 int	main(void)
 {
@@ -34,7 +34,7 @@ int	main(void)
 				{
 					temp_contact[i].aff_contact(i);
 				}
-				for (size_t i = 0; i < 67; i++)
+				for (size_t i = 0; i < 45; i++)
 				{
 					std::cout << "-";
 				}
@@ -50,4 +50,39 @@ int	main(void)
 		}
 	}
 	return (0);
+}
+
+
+void	print_ten_char(std::string str)
+{
+	std::size_t	size = str.size();
+
+	if (size <= 10)
+	{
+		for (std::size_t i = 10; i > size; i--)
+		{
+			std::cout << " ";
+		}
+		std::cout << str;
+	}
+	else
+	{
+		for (std::size_t i = 0; i < 9; i++)
+		{
+			std::cout << str[i];
+		}
+		std::cout << ".";
+	}
+	std::cout << "|";
+}
+
+bool	is_str_digit(std::string str)
+{
+	for (std::size_t i = 0; i < str.size(); i++)
+	{
+		if (!std::isdigit(str[i]))
+			return (false);
+	}
+	return(true);
+	
 }

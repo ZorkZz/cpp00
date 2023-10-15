@@ -6,15 +6,15 @@
 #    By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/17 20:10:05 by astachni          #+#    #+#              #
-#    Updated: 2023/07/17 23:20:59 by astachni         ###   ########.fr        #
+#    Updated: 2023/10/15 21:57:08 by astachni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phone_book
 
-SRC = main.cpp constructor.cpp getters.cpp contact.cpp
+SRC = main.cpp Contact.cpp Phonebook.cpp
 
-HEADER = class.hpp
+HEADER = prototype.hpp Contact.hpp PhoneBook.hpp
 
 OBJ = $(SRC:%.cpp=%.zizi)
 
@@ -26,7 +26,7 @@ CC = c++
 
 all: $(NAME)
 
-%.zizi: %.cpp $(HEADER) Makefile
+%.zizi: %.cpp $(HEADER)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf	"\033[1;33m \r\033[2KCreating -c $< -o $\n \033[0m"
 
