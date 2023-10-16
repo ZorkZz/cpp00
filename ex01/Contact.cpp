@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 22:44:48 by astachni          #+#    #+#             */
-/*   Updated: 2023/10/16 17:17:51 by astachni         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:26:18 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,31 @@ void	Contact::set_contact()
 	{
 		std::cout << "Set first name: ";
 		if (!std::getline(std::cin, this->first_name))
-			exit(1);
+			return ;
 	}
 	while (is_printable(this->last_name) == 1)
 	{
 		std::cout << "Set last name: ";
 		if(!std::getline(std::cin, this->last_name))
-			exit(1);
+			return ;
 	}
 	while (is_printable(this->nickname) == 1)
 	{
 		std::cout << "Set nickname: ";
 		if(std::getline(std::cin, this->nickname))
-			exit(1);
+			return ;
 	}
 	while (is_printable(this->phone_number) == 1)
 	{
 		std::cout << "Set phone number: ";
 		if(std::getline(std::cin, this->phone_number))
-			exit(1);
+			return ;
 	}
 	while (is_printable(this->darkest_secret) == 1)
 	{
 		std::cout << "Set darkest secret: ";
 		if(std::getline(std::cin, this->darkest_secret))
-			exit(1);
+			return ;
 	}
 }
 
