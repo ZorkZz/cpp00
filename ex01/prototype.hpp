@@ -11,5 +11,6 @@
 
 void	print_ten_char(std::string str);
 bool	is_str_digit(std::string str);
+int		is_printable(std::string str);
 
 #endif

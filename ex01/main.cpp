@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:18:01 by astachni          #+#    #+#             */
-/*   Updated: 2023/10/15 21:54:22 by astachni         ###   ########.fr       */
+/*   Updated: 2023/10/16 16:05:55 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@ int	main(void)
 	PhoneBook 	my_phone_book;
 	Contact		*temp_contact;
 
-	while (true)
+	while (key_word != "EXIT")
 	{
-		std::cout << "ADD, SEARCH or EXIT: ";
 		if (std::getline(std::cin, key_word))
 		{
-			if (key_word == "EXIT")
-				break ;
-			else if (key_word == "ADD")
+			if (key_word == "ADD")
 				my_phone_book.choose_contact();
 			else if (key_word == "SEARCH")
 			{
@@ -85,4 +82,21 @@ bool	is_str_digit(std::string str)
 	}
 	return(true);
 	
+}
+
+int	is_printable(std::string str)
+{
+	size_t		i;
+	const char	*str_c = str.c_str();
+
+	i = 0;
+	if (!str_c[0])
+		return 1;
+	while (str_c && str_c[i])
+	{
+		if (!std::isprint(str_c[i]))
+			return (1);
+		i++;
+	}
+	return 0;
 }

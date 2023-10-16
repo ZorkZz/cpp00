@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 22:44:48 by astachni          #+#    #+#             */
-/*   Updated: 2023/10/15 21:47:32 by astachni         ###   ########.fr       */
+/*   Updated: 2023/10/16 16:08:57 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,35 @@
 
 Contact::Contact()
 {
-	first_name[0] = '\0';
-    last_name[0] = '\0';
-    nickname[0] = '\0';
-    phone_number[0] = '\0';
 }
 
 void	Contact::set_contact()
 {
-	std::cout << "Set first name: ";
-	std::getline(std::cin, this->first_name);
-	std::cout << "Set last name: ";
-	std::getline(std::cin, this->last_name);
-	std::cout << "Set nickname: ";
-	std::getline(std::cin, this->nickname);
-	std::cout << "Set phone number: ";
-	std::getline(std::cin, this->phone_number);
-	std::cout << "Set darkest secret: ";
-	std::getline(std::cin, this->darkest_secret);
+	while (is_printable(this->first_name) == 1)
+	{
+		std::cout << "Set first name: ";
+		std::getline(std::cin, this->first_name);
+	}
+	while (is_printable(this->last_name) == 1)
+	{
+		std::cout << "Set last name: ";
+		std::getline(std::cin, this->last_name);
+	}
+	while (is_printable(this->nickname) == 1)
+	{
+		std::cout << "Set nickname: ";
+		std::getline(std::cin, this->nickname);
+	}
+	while (is_printable(this->phone_number) == 1)
+	{
+		std::cout << "Set phone number: ";
+		std::getline(std::cin, this->phone_number);
+	}
+	while (is_printable(this->darkest_secret) == 1)
+	{
+		std::cout << "Set darkest secret: ";
+		std::getline(std::cin, this->darkest_secret);
+	}
 }
 
 void	Contact::aff_contact(int index)
