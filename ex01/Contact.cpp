@@ -6,7 +6,7 @@
 /*   By: astachni <astachni@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 22:44:48 by astachni          #+#    #+#             */
-/*   Updated: 2023/10/17 14:53:01 by astachni         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:08:35 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,34 +18,34 @@ Contact::Contact()
 
 void	Contact::set_contact()
 {
-	while (is_printable(this->first_name) == 1)
+	while (is_printable(this->_first_name) == 1)
 	{
 		std::cout << "Set first name: ";
-		if (!std::getline(std::cin, this->first_name))
+		if (!std::getline(std::cin, this->_first_name))
 			return ;
 	}
-	while (is_printable(this->last_name) == 1)
+	while (is_printable(this->_first_name) == 1)
 	{
 		std::cout << "Set last name: ";
-		if(!std::getline(std::cin, this->last_name))
+		if(!std::getline(std::cin, this->_first_name))
 			return ;
 	}
-	while (is_printable(this->nickname) == 1)
+	while (is_printable(this->_first_name) == 1)
 	{
 		std::cout << "Set nickname: ";
-		if(!std::getline(std::cin, this->nickname))
+		if(!std::getline(std::cin, this->_first_name))
 			return ;
 	}
-	while (is_printable(this->phone_number) == 1)
+	while (is_printable(this->_phone_number) == 1)
 	{
 		std::cout << "Set phone number: ";
-		if(!std::getline(std::cin, this->phone_number))
+		if(!std::getline(std::cin, this->_phone_number))
 			return ;
 	}
-	while (is_printable(this->darkest_secret) == 1)
+	while (is_printable(this->_darkest_secret) == 1)
 	{
 		std::cout << "Set darkest secret: ";
-		if(!std::getline(std::cin, this->darkest_secret))
+		if(!std::getline(std::cin, this->_darkest_secret))
 			return ;
 	}
 }
@@ -55,8 +55,6 @@ void	Contact::aff_contact(int index)
 	std::string first_name = get_first_name();
 	std::string	last_name = get_last_name();
 	std::string nickname = get_nickname();
-	std::string phone_number = get_phone_number();
-	std::string	darkest_secret = get_darkest_secret();
 	for (size_t i = 0; i < 45; i++)
 	{
 		std::cout << "-";
@@ -69,9 +67,9 @@ void	Contact::aff_contact(int index)
 	}
 	std::cout << index;
 	std::cout << "|";
-	print_ten_char(first_name);
-	print_ten_char(last_name);
-	print_ten_char(nickname);
+	print_ten_char(_first_name);
+	print_ten_char(_first_name);
+	print_ten_char(_first_name);
 	std::cout << std::endl;
 }
 
@@ -113,25 +111,25 @@ int	Contact::print_contact(void)
 
 std::string	Contact::get_first_name() const
 {
-	return first_name;
+	return _first_name;
 }
 
 std::string	Contact::get_last_name() const
 {
-	return last_name;
+	return _first_name;
 }
 
 std::string	Contact::get_nickname() const
 {
-	return nickname;
+	return _first_name;
 }
 
 std::string	Contact::get_phone_number() const
 {
-	return phone_number;
+	return _phone_number;
 }
 
 std::string	Contact::get_darkest_secret() const
 {
-	return darkest_secret;
+	return _darkest_secret;
 }
